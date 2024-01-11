@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat-Online</title>
+    <script defer  src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="js/index.js"></script>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(255, 255, 255);
+    }
+
+    #chat-container {
+      width: 500px;
+      overflow: auto;
+      height: 500px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      background-color: rgb(253, 209, 253);
+      border-radius: 40px;
+    }
+
+    .chat-message {
+      margin-bottom: 10px;
+      font-family:'Times New Roman', Times, serif;
+      font-size: 1.1rem;
+    }
+    .left1 {
+      display: flex;
+      place-items: start;
+      background-color: rgb(46, 179, 255);
+      padding: 10px 10px 10px 10px;
+      border-radius: 30px 30px 30px 2px;
+      width: fit-content;
+    }
+    .right1 {
+      display: flex;
+      place-items: end;
+      place-content: end;
+      background-color: rgb(255, 87, 182);
+      padding: 10px 10px 10px 10px;
+      border-radius: 30px 30px 2px 30px;
+      width: fit-content;
+    }
+    .left{
+      display: flex;
+      justify-content: start;
+    }
+    .right{
+      display:flex;
+      justify-content: end;
+    }
+
+    #message-input {
+      width: 300px;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    #send{
+      display: flex;
+      flex-direction:row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #send-button {
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      margin-left: 5px;
+    }
+    .heading{
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 5px;
+      justify-content: center;
+      align-items: center;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    }
+    img{
+      width: 50px;
+      height: 50px;
+      margin-right: 5px;
+      border-radius: 50%;
+    }
+  </style>
+
+  <body>
+    <div class="heading">
+      <img src="logo.jpg" >
+      <h1>Chat Online</h1>
+
+    </div>
+    <div id="chat-container">
+    </div>
+    <form id="send">
+      <input
+        type="text"
+        id="message-input"
+        placeholder="Type your message..."
+      />
+      <button id="send-button">Send</button>
+    </form>
+  </body>
+</html>
